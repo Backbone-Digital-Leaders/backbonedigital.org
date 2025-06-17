@@ -1,8 +1,8 @@
 # Backbone static website
 
-Accessible 2024 rewrite of former WordPress site. https://backbonedigital.org/
+Accessible 2024 rewrite of former WordPress site https://backbonedigital.org.
 
-The GitHub Pages internal URL is https://backbone-digital-leaders.github.io/backbonedigital.org/
+The GitHub Pages internal URL is https://backbone-digital-leaders.github.io/backbonedigital.org/ with a custom domain configurable under https://github.com/Backbone-Digital-Leaders/backbonedigital.org/settings/pages.
 
 ## Development
 
@@ -25,3 +25,4 @@ GitHub pages serves static files.
 
 1. Make edits
 1. Commit your change and push to GitHub
+1. Wait 1-2 minutes for the change to go live
