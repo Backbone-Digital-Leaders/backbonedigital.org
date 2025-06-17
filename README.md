@@ -1,23 +1,25 @@
 # Backbone static website
 
-https://backbonedigital.org/
+Accessible 2024 rewrite of former WordPress site. https://backbonedigital.org/
 
 ## Development
 
 ### Setup instructions
 
 Prerequisites:
-- Python 3
+- Python 3 (optional, for local testing)
 
+Steps:
 1. Clone this repo
 1. `cd public`
 1. Serve the static files: `python3 -m http.server 8080`
-1. Visit http://localhost:8080/
+1. Visit http://localhost:8080/ in your browser
 
 ## Production
 
 ### Deploying
 
-Eventually this will likely be hosted on WordPress. Until then:
+GitHub pages serves static files.
 
-1. Push files to our static server: `rsync -azP -e ssh public/* root@104.248.118.195:/var/www/backbone-digital/`
+1. Make edits
+1. Commit your change and push to GitHub
