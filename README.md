@@ -2,6 +2,8 @@
 
 Accessible 2024 rewrite of former WordPress site. https://backbonedigital.org/
 
+The GitHub Pages internal URL is https://backbone-digital-leaders.github.io/backbonedigital.org/
+
 ## Development
 
 ### Setup instructions
