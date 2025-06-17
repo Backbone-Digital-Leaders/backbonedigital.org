@@ -1,0 +1,18 @@
+@font-face {
+    font-family: Martin;
+    font-display: swap;
+    src: url("/assets/fonts/martin-regular-webfont.woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-display: swap;
+    src: url("/assets/fonts/Inter_24pt-Regular.ttf");
+}
+
+@font-face {
+    font-family: Inter;
+    font-weight: 200;
+    font-display: swap;
+    src: url("/assets/fonts/Inter_24pt-ExtraLight.ttf")
+}
