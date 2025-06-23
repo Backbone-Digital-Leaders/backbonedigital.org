@@ -26,3 +26,5 @@ GitHub pages serves static files.
 1. Make edits
 1. Commit your change and push to GitHub
 1. Wait 1-2 minutes for the change to go live
+
+Deploy status can be viewed at https://github.com/Backbone-Digital-Leaders/backbonedigital.org/actions.
