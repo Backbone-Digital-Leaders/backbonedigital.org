@@ -395,27 +395,6 @@ section, footer {
     font-weight: var(--global-typography-text-font-weight);
 }
 
-/* centered quick links row under hero */
-#main .quick-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 0 2rem 0;
-    flex-wrap: wrap;
-}
-
-#main .quick-links .quick-link {
-    text-decoration: none;
-    font-family: Martin, sans-serif;
-    text-transform: uppercase;
-}
-
-#main .quick-links .quick-link:hover {
-    text-decoration: underline;
-}
-
 .flex-container {
     align-items: center;
     justify-content: center;
