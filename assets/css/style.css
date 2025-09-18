@@ -603,6 +603,7 @@ section, footer {
     align-items: center;
     justify-content: left;
     margin: 0;
+    padding: 0; /* remove default left padding for alignment */
 }
 
 #expertise ul li {
