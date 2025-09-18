@@ -138,7 +138,7 @@ p {
     h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
         margin-top: 0.6em;
-        margin-bottom: 0.45em;
+        margin-bottom: 0.35em;
     }
 
     #main #cta h1 {
@@ -149,6 +149,31 @@ p {
     /* reduce section spacing on tablets/smaller screens */
     section, footer {
         padding-bottom: 2rem;
+    }
+
+    /* expertise: single-column cards on mobile for readability */
+    #expertise ul li {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #expertise ul li img {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* our collective: reduce gap between heading and text */
+    #our-story .flex-container {
+        gap: 1.5rem;
+    }
+
+    #our-story aside h2 {
+        margin-bottom: 0.25rem;
+    }
+
+    /* bump small text size slightly for readability */
+    .size-small {
+        font-size: 1rem;
     }
 }
 
@@ -196,7 +221,7 @@ p {
     h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
         margin-top: 0.7em;
-        margin-bottom: 0.4em;
+        margin-bottom: 0.3em;
     }
 
     #main #cta h1 {
@@ -207,6 +232,11 @@ p {
     /* tighter section spacing on small phones */
     section, footer {
         padding-bottom: 1.5rem;
+    }
+
+    /* larger small text on small phones */
+    .size-small {
+        font-size: 1.1rem;
     }
 }
 
