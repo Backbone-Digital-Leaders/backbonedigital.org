@@ -487,7 +487,7 @@ section, footer {
 
 #values .values-detail {
     background-color: var(--global-color-accent);
-    font-weight: 200;
+    font-weight: var(--global-typography-text-font-weight);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -564,101 +564,6 @@ section, footer {
     #expertise .flex-container {
         flex-direction: column;
     }
-}
-
-#democracy figure {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-}
-
-#democracy figure img {
-    flex: 1;
-    object-fit: cover;
-    width: 0;
-}
-
-#democracy figure blockquote {
-    flex: 1;
-    background-color: var(--global-color-accent);
-    margin: 0;
-    padding: 1.5rem;
-}
-
-#democracy figure blockquote p {
-    font-weight: 200;
-}
-
-#democracy figure blockquote b {
-    text-transform: uppercase;
-}
-
-#democracy .quote-slides {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-#democracy .quote-slides .slide {
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
-    width: var(--global-width);
-    max-width: var(--global-max-width);
-}
-
-#democracy .quote-slides h3 {
-    display: grid;
-    margin-bottom: 3rem;
-}
-
-#democracy .quote-slides .quotemark {
-    font-size: 5rem;
-    color: var(--global-color-primary)
-}
-
-#democracy .quote-slides .quotemark.start {
-    margin-bottom: -1rem;
-}
-
-#democracy .quote-slides .quotemark.end {
-    display: inline-block;
-    text-align: right;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-#our-story .flex-container {
-    flex-direction: row;
-    gap: 4rem;
-    padding-bottom: 2rem;
-}
-
-@media only screen and (max-width: 800px) {
-    #our-story .flex-container {
-        flex-direction: column;
-    }
-}
-
-#our-story aside {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-
-#our-story #meet-mama-shug {
-    display: flex;
-    flex-direction: column;
-    flex: 3;
-}
-
-#our-story aside h2 {
-    text-wrap: nowrap;
-}
-
-#our-story aside img {
-    width: 100%;
-    max-width: 420px;
 }
 
 #our-partners h2 {
@@ -794,4 +699,18 @@ footer .footer-links ul {
     background: var(--global-color-text);
     height: 0.4rem;
     margin-bottom: 1.5rem;
+}
+
+.form-page .main {
+    margin-top: 2rem;
+}
+
+.form-page header {
+    /* Match the Google Form default and center it. */
+    width: 640px;
+    margin: 0 auto;
+}
+
+.form-page #logo img {
+    width: 160px;
 }

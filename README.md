@@ -9,13 +9,12 @@ The GitHub Pages internal URL is https://backbone-digital-leaders.github.io/back
 ### Setup instructions
 
 Prerequisites:
-- Python 3 (optional, for local testing)
+- Python 3 (if you wish to test locally before deploying changes)
 
 Steps:
 1. Clone this repo
-1. `cd public`
 1. Serve the static files: `python3 -m http.server 8080`
-1. Visit http://localhost:8080/ in your browser
+1. Visit http://localhost:8080/ in your browser to see the site
 
 ## Production
 
