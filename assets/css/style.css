@@ -700,3 +700,17 @@ footer .footer-links ul {
     height: 0.4rem;
     margin-bottom: 1.5rem;
 }
+
+.form-page .main {
+    margin-top: 2rem;
+}
+
+.form-page header {
+    /* Match the Google Form default and center it. */
+    width: 640px;
+    margin: 0 auto;
+}
+
+.form-page #logo img {
+    width: 160px;
+}
