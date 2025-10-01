@@ -410,6 +410,21 @@ section, footer {
     }
 }
 
+/* tighten spacing between section headings and body on mobile */
+@media only screen and (max-width: 800px) {
+    #mission .flex-container aside + div,
+    #expertise .flex-container aside + div,
+    #our-story .flex-container aside + div {
+        margin-top: 0.25rem;
+    }
+
+    #mission .flex-container aside + div > :first-child,
+    #expertise .flex-container aside + div > :first-child,
+    #our-story .flex-container aside + div > :first-child {
+        margin-top: 0;
+    }
+}
+
 .flex-container aside h2 {
     text-wrap: nowrap;
 }
@@ -614,6 +629,9 @@ section, footer {
     max-width: 4rem;
 }
 
+@media only screen and (max-width: 800px) {
+}
+
 #contact section {
     padding-bottom: 2rem;
 }
@@ -668,6 +686,50 @@ footer .footer-links ul {
     justify-content: space-around;
     list-style-type: none;
     padding: 0;
+}
+
+/* accessible skip links */
+.skip-links {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+}
+
+.skip-links:focus-within {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.skip-links a {
+    display: block;
+    margin: 0.5rem;
+    background-color: var(--global-color-secondary);
+    color: var(--global-color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* our collective layout fixes */
+#our-story .flex-container {
+    column-gap: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#our-story .content aside {
+    width: auto;
+}
+
+#our-collective {
+    flex: 1 1 0;
+}
+
+@media only screen and (max-width: 800px) {
+    #our-story .flex-container {
+        flex-direction: column;
+    }
 }
 
 .policy .main {
