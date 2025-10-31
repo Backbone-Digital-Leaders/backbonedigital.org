@@ -387,6 +387,14 @@ section, footer {
     letter-spacing: 1px;
     padding-right: 2rem;
     padding-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    #main #cta h1 {
+        padding-bottom: 0;
+        padding-right: 0;
+    }
 }
 
 #main #cta em {
