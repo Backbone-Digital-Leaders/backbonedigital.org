@@ -1,0 +1,230 @@
+/* ============================================
+   digital-intensive.html — page-specific styles
+   ============================================ */
+
+/* consistent top padding across all sections on this page */
+.digital-intensive section {
+    padding-top: 3rem;
+}
+
+.digital-intensive .content {
+    width: calc(100% - 1.5rem);
+    max-width: none;
+}
+
+/* salmon background using existing palette token */
+.bg-salmon {
+    background-color: var(--global-color-4bb14f1);
+}
+
+.bg-primary {
+    background-color: var(--global-color-primary);
+}
+
+.bg-dark-blue {
+    background-color: var(--global-color-dark-blue);
+}
+
+/* hero overrides */
+.digital-intensive #cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.intensive-subhead {
+    margin: 0;
+    font-family: Martin, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 0.9em;
+}
+
+/* match the filled homepage button style */
+.digital-intensive #main .button,
+.digital-intensive #apply-cta .button {
+    background-color: var(--global-color-secondary);
+    color: var(--global-color-primary) !important;
+}
+
+.digital-intensive #main .button:hover,
+.digital-intensive #apply-cta .button:hover {
+    background-color: var(--global-color-secondary);
+    color: var(--global-color-primary) !important;
+}
+
+/* much more rounded corners on all intensive page buttons */
+.digital-intensive .button {
+    border-radius: 100px;
+}
+
+/* info block */
+#intensive-intro .intensive-intro-flex {
+    align-items: flex-start;
+    column-gap: 2rem;
+}
+
+.intensive-intro-image {
+    flex: 0 0 36%;
+    margin: 0;
+}
+
+.intensive-placeholder-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: var(--global-color-light-blue);
+    /* renders as a coloured block when image is missing */
+}
+
+.intensive-intro-text {
+    flex: 1 1 0;
+}
+
+.intensive-intro-text h2 {
+    margin-top: 0;
+}
+
+.intensive-apply-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--global-color-text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.08em;
+}
+
+.intensive-apply-link:hover {
+    color: var(--global-color-dark-blue);
+}
+
+@media only screen and (max-width: 800px) {
+    #intensive-intro .intensive-intro-flex {
+        flex-direction: column;
+    }
+
+    .intensive-intro-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .intensive-placeholder-img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* learning outcomes */
+.intensive-learn-label {
+    margin: 0 0 0.6rem 0;
+    font-family: Martin, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.learn-to-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.learn-to-list li {
+    position: relative;
+    padding: 0.08rem 0;
+    text-align: center;
+}
+
+.learn-to-text {
+    display: inline-block;
+    padding: 0 0.22rem;
+    color: var(--global-color-text);
+    font-family: Martin, sans-serif;
+    font-size: clamp(2em, 5.7vw, 3rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    letter-spacing: -0.025em;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.learn-to-list li::before {
+    content: "";
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    width: 100dvw;
+    height: 9px;
+    background-color: var(--global-color-accent);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* faq */
+#faq h2 {
+    margin: 0 0 1.65rem 0;
+    font-family: Martin, sans-serif;
+    font-size: clamp(1.65rem, 4vw, 2.3rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 0.92em;
+    letter-spacing: -0.01em;
+}
+
+.faq-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.65rem;
+}
+
+.faq-list dt {
+    font-family: Martin, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--global-color-primary);
+    line-height: 0.94em;
+    margin-bottom: 0.5rem;
+}
+
+.faq-list dd {
+    margin: 0;
+    color: var(--global-color-primary);
+    font-size: clamp(1rem, 1.8vw, 1.08rem);
+    line-height: 1.5;
+    max-width: 62ch;
+}
+
+/* apply cta */
+.apply-cta-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.apply-cta-flex .button {
+    flex: 0 0 auto;
+}
+
+#apply-cta h2 {
+    margin: 0;
+    flex: 1 1 0;
+    max-width: 14rem;
+    font-size: clamp(1.3rem, 3.9vw, 2.3rem);
+    line-height: 0.92em;
+    text-align: center;
+}
