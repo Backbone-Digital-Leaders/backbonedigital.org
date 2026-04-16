@@ -71,6 +71,15 @@
     margin: 0;
 }
 
+.intensive-intro-image figcaption {
+    margin-top: 0.35rem;
+}
+
+.intensive-intro-image figcaption p {
+    margin: 0;
+    color: var(--global-color-text-secondary);
+}
+
 .intensive-placeholder-img {
     display: block;
     width: 100%;
