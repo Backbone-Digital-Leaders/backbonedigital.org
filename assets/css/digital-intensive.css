@@ -47,6 +47,12 @@
     gap: 1rem;
 }
 
+/* center the hero apply button and give it extra breathing room above */
+.digital-intensive #main #cta > .button {
+    align-self: center;
+    margin-top: 1.25rem;
+}
+
 /* neutralize the global h1 padding so the gap is the only spacing between hero lines */
 .digital-intensive #main #cta h1 {
     padding-bottom: 0;
@@ -156,7 +162,7 @@
 
     /* lift the hero content higher on mobile screens */
     .digital-intensive #main {
-        padding-top: 0;
+        padding-top: 0.75rem;
     }
 
     /* tighten footer rhythm on mobile */
