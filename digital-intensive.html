@@ -23,7 +23,7 @@
                 <div id="cta">
                     <h1 class="size-h1">
                         Our four-day digital accessibility intensive is a virtual training to strengthen your campaign efforts right now.                     </h1>
-                    <button data-tf-popup="01KPY5NPQAA0VGT6JHQZNWBV9D" class="button size-h6">Apply</button>
+                    <a href="apply.html" class="button size-h6 apply-trigger" data-apply-trigger role="button">Apply</a>
                 </div>
             </div>
         </section>
@@ -38,7 +38,7 @@
                     <div class="intensive-intro-text">
                         <h2 class="size-h3">How should my organization leverage AI for accessible communication?</h2>
                         <p>Designed for organizations interested in inclusion, this year's intensive will specifically feature disabled perspectives on the ethical use of AI in accessible communications.</p>
-                        <button data-tf-popup="01KPY5NPQAA0VGT6JHQZNWBV9D" class="intensive-apply-link size-small">Apply by 6/26 &rsaquo;&rsaquo;</button>
+                        <a href="apply.html" class="intensive-apply-link size-small apply-trigger" data-apply-trigger>Apply by 6/26 &rsaquo;&rsaquo;</a>
                     </div>
                 </div>
             </div>
@@ -116,10 +116,21 @@
             <div class="content">
                 <div class="flex-container apply-cta-flex">
                     <h2 class="size-h3 apply-cta-heading">Ready to take your skills to the next level? Applications close on June 17th.</h2>
-                    <button data-tf-popup="01KPY5NPQAA0VGT6JHQZNWBV9D" class="button size-h6">Apply</button>
+                    <a href="apply.html" class="button size-h6 apply-trigger" data-apply-trigger role="button">Apply</a>
                 </div>
             </div>
         </section>
+
+        <!-- apply modal: loads apply.html (which hosts the typeform live embed) in an iframe -->
+        <div id="apply-modal" class="apply-modal" hidden aria-hidden="true">
+            <div class="apply-modal__backdrop" data-apply-close></div>
+            <div class="apply-modal__dialog" role="dialog" aria-modal="true" aria-label="Apply to the Digital Intensive">
+                <button type="button" class="apply-modal__close" data-apply-close aria-label="Close apply form">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <iframe class="apply-modal__iframe" title="Digital Intensive application form" src="about:blank" allow="camera; microphone; autoplay; clipboard-write; encrypted-media"></iframe>
+            </div>
+        </div>
 
         <footer class="bg-accent">
             <div class="content">
@@ -147,6 +158,43 @@
                 </div>
             </div>
         </footer>
-        <script src="//embed.typeform.com/next/embed.js"></script>
+        <script>
+            (function () {
+                var modal = document.getElementById('apply-modal');
+                if (!modal) return;
+                var iframe = modal.querySelector('.apply-modal__iframe');
+                var triggers = document.querySelectorAll('[data-apply-trigger]');
+                var closers = modal.querySelectorAll('[data-apply-close]');
+                var lastFocused = null;
+
+                function openModal(event) {
+                    if (event) event.preventDefault();
+                    lastFocused = document.activeElement;
+                    var src = (event && event.currentTarget && event.currentTarget.getAttribute('href')) || 'apply.html';
+                    iframe.setAttribute('src', src);
+                    modal.hidden = false;
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('apply-modal-open');
+                    var closeBtn = modal.querySelector('.apply-modal__close');
+                    if (closeBtn) closeBtn.focus();
+                }
+
+                function closeModal() {
+                    modal.hidden = true;
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('apply-modal-open');
+                    iframe.setAttribute('src', 'about:blank');
+                    if (lastFocused && typeof lastFocused.focus === 'function') {
+                        lastFocused.focus();
+                    }
+                }
+
+                triggers.forEach(function (el) { el.addEventListener('click', openModal); });
+                closers.forEach(function (el) { el.addEventListener('click', closeModal); });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && !modal.hidden) closeModal();
+                });
+            })();
+        </script>
     </body>
 </html>
