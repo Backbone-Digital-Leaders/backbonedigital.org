@@ -173,7 +173,7 @@ p {
     }
 }
 
-a.button {
+.button {
     display: inline-block;
     cursor: pointer;
     background-color: var(--global-color-secondary);
@@ -185,6 +185,13 @@ a.button {
     font-family: Martin, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+/* strip browser-default button chrome so <button class="button"> matches <a class="button"> */
+button.button {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
 }
 
 #header {

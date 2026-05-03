@@ -2,14 +2,28 @@
    digital-intensive.html — page-specific styles
    ============================================ */
 
-/* consistent top padding across all sections on this page */
-.digital-intensive section {
-    padding-top: 3rem;
+/* shared spacing tokens for this page */
+.digital-intensive {
+    --section-padding-block: clamp(2.5rem, 5vw, 4.5rem);
+    --content-gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --content-max: 1100px;
+    --stack-sm: 0.75rem;
+    --stack-md: 1.25rem;
+    --stack-lg: 2rem;
+}
+
+/* uniform vertical rhythm on every section + footer */
+.digital-intensive section,
+.digital-intensive footer {
+    padding-top: var(--section-padding-block);
+    padding-bottom: var(--section-padding-block);
 }
 
 .digital-intensive .content {
-    width: calc(100% - 1.5rem);
-    max-width: none;
+    width: 100%;
+    max-width: var(--content-max);
+    padding-inline: var(--content-gutter);
+    box-sizing: border-box;
 }
 
 /* salmon background using existing palette token */
@@ -30,8 +44,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
-    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+/* neutralize the global h1 padding so the gap is the only spacing between hero lines */
+.digital-intensive #main #cta h1 {
+    padding-bottom: 0;
 }
 
 .intensive-subhead {
@@ -55,6 +73,17 @@
     color: var(--global-color-primary) !important;
 }
 
+/* reset browser chrome on the inline apply link button */
+.digital-intensive button.intensive-apply-link {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
 /* much more rounded corners on all intensive page buttons */
 .digital-intensive .button {
     border-radius: 100px;
@@ -63,7 +92,8 @@
 /* info block */
 #intensive-intro .intensive-intro-flex {
     align-items: flex-start;
-    column-gap: 2rem;
+    column-gap: var(--stack-lg);
+    row-gap: var(--stack-lg);
 }
 
 .intensive-intro-image {
@@ -71,35 +101,33 @@
     margin: 0;
 }
 
-.intensive-intro-image figcaption {
-    margin-top: 0.35rem;
-}
-
-.intensive-intro-image figcaption p {
-    margin: 0;
-    color: var(--global-color-text-secondary);
-}
-
 .intensive-placeholder-img {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
+    object-position: center top;
     background-color: var(--global-color-light-blue);
-    /* renders as a coloured block when image is missing */
 }
 
 .intensive-intro-text {
     flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-sm);
 }
 
 .intensive-intro-text h2 {
-    margin-top: 0;
+    margin: 0;
+}
+
+.intensive-intro-text p {
+    margin: 0;
 }
 
 .intensive-apply-link {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     font-weight: 600;
     color: var(--global-color-text);
     text-decoration: underline;
@@ -123,12 +151,81 @@
 
     .intensive-placeholder-img {
         aspect-ratio: 4 / 3;
+        object-position: center 20%;
+    }
+
+    /* lift the hero content higher on mobile screens */
+    .digital-intensive #main {
+        padding-top: 0;
+    }
+
+    /* tighten footer rhythm on mobile */
+    .digital-intensive footer {
+        padding-top: 0.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .digital-intensive footer .footer-links {
+        margin-top: 0.5rem;
+    }
+
+    .digital-intensive #footer-logo img {
+        margin: 0;
+    }
+
+    .digital-intensive footer .social-links {
+        margin-top: 0.25rem;
+    }
+
+    /* stack Apply button and heading on smaller screens */
+    .apply-cta-flex {
+        flex-direction: column;
+        gap: var(--stack-md);
+    }
+
+    #apply-cta h2 {
+        flex: 0 1 auto;
+        text-align: center;
+        max-width: 22rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* larger, more legible learn-to label + items on mobile */
+    .intensive-learn-label {
+        font-size: 1.6rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .learn-to-text {
+        font-size: clamp(3.4rem, 7.2vw, 4.4rem);
+        letter-spacing: -0.03em;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* slightly tighter FAQ question font on narrow phones */
+    .faq-item summary {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+    }
+
+    .faq-item summary::after {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+    }
+
+    /* ensure comfortable tap height on small screens */
+    .digital-intensive .button {
+        min-height: 44px;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
     }
 }
 
 /* learning outcomes */
 .intensive-learn-label {
-    margin: 0 0 0.6rem 0;
+    margin: 0 0 var(--stack-md) 0;
     font-family: Martin, sans-serif;
     font-size: 1rem;
     font-weight: normal;
@@ -143,12 +240,12 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.85rem;
 }
 
 .learn-to-list li {
     position: relative;
-    padding: 0.08rem 0;
+    padding: 0.15rem 0;
     text-align: center;
 }
 
@@ -159,7 +256,6 @@
     font-family: Martin, sans-serif;
     font-size: clamp(2em, 5.7vw, 3rem);
     font-weight: normal;
-    text-transform: uppercase;
     line-height: 1.2em;
     letter-spacing: -0.025em;
     position: relative;
@@ -182,7 +278,7 @@
 
 /* faq */
 #faq h2 {
-    margin: 0 0 1.65rem 0;
+    margin: 0 0 var(--stack-lg) 0;
     font-family: Martin, sans-serif;
     font-size: clamp(1.65rem, 4vw, 2.3rem);
     font-weight: normal;
@@ -196,25 +292,64 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.65rem;
 }
 
-.faq-list dt {
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    cursor: pointer;
+    list-style: none;
     font-family: Martin, sans-serif;
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: normal;
     text-transform: uppercase;
     color: var(--global-color-primary);
     line-height: 0.94em;
-    margin-bottom: 0.5rem;
+    min-height: 44px;
+    user-select: none;
 }
 
-.faq-list dd {
-    margin: 0;
+/* hide the default browser disclosure triangle */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
+
+.faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-family: Martin, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: normal;
+    line-height: 1;
+    color: var(--global-color-primary);
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '\2212'; /* − minus sign */
+}
+
+.faq-item summary:hover {
+    opacity: 0.8;
+}
+
+.faq-item p {
+    margin: 0 0 1.1rem 0;
+    padding-right: 2.5rem;
     color: var(--global-color-primary);
     font-size: clamp(1rem, 1.8vw, 1.08rem);
-    line-height: 1.5;
-    max-width: 62ch;
+    line-height: 1.55;
+    max-width: 70ch;
 }
 
 /* apply cta */
@@ -222,7 +357,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--stack-lg);
 }
 
 .apply-cta-flex .button {
@@ -231,9 +366,8 @@
 
 #apply-cta h2 {
     margin: 0;
-    flex: 1 1 0;
-    max-width: 14rem;
+    flex: 0 1 22rem;
     font-size: clamp(1.3rem, 3.9vw, 2.3rem);
-    line-height: 0.92em;
-    text-align: center;
+    line-height: 1em;
+    text-align: left;
 }
