@@ -191,11 +191,18 @@
         padding: 0.4rem 0;
     }
 
-    /* keep each learn-to item on a single line on standard phones */
+    /* clamp learn-to list to 440px and keep each item on a single line */
+    .learn-to-list {
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .learn-to-text {
-        font-size: min(3.7vw, 1.5rem);
+        font-size: min(3.7vw, 1rem);
         white-space: nowrap;
         word-spacing: 0;
+        padding: 0 0.25rem;
     }
 
     /* slightly tighter FAQ question font on narrow phones */
