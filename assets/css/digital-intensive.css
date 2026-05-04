@@ -193,8 +193,8 @@
 
     /* roomier line-height and heavier weight for the learn-to items on mobile */
     .learn-to-text {
-        line-height: 1.875em;
-        font-weight: 700;
+        line-height: 2.5em;
+        font-weight: 800;
     }
 
     /* slightly tighter FAQ question font on narrow phones */

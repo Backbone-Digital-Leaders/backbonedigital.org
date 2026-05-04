@@ -1,0 +1,4 @@
+style(digital-intensive): bump mobile learn-to line-height to 2.5em and weight to 800
+
+extend the work sans web font request to include weights 800 and 900 so the
+extrabold treatment renders correctly on phones.
