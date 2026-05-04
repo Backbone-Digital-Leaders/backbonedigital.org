@@ -10,6 +10,8 @@
     --stack-sm: 0.75rem;
     --stack-md: 1.25rem;
     --stack-lg: 2rem;
+
+    overflow-x: clip;
 }
 
 /* uniform vertical rhythm on every section + footer */
@@ -182,14 +184,15 @@
     }
 
     .learn-to-text {
-        font-size: clamp(2.6rem, 6.5vw, 3.4rem);
+        font-size: clamp(2rem, 6.5vw, 2.8rem);
         letter-spacing: 0.01em;
         word-spacing: 0.08em;
         line-height: 1.4em;
-        padding: 0 0.5rem;
+        padding: 0 0.4rem;
+        max-width: 100%;
         white-space: normal;
         word-break: normal;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
         hyphens: auto;
     }
 
@@ -219,6 +222,10 @@
 }
 
 /* learning outcomes */
+#learn-to {
+    overflow-x: clip;
+}
+
 .intensive-learn-label {
     margin: 0 0 var(--stack-md) 0;
     font-family: "Work Sans", sans-serif;
