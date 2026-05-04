@@ -191,6 +191,13 @@
         padding: 0.4rem 0;
     }
 
+    /* keep each learn-to item on a single line on standard phones */
+    .learn-to-text {
+        font-size: min(3.7vw, 1.5rem);
+        white-space: nowrap;
+        word-spacing: 0;
+    }
+
     /* slightly tighter FAQ question font on narrow phones */
     .faq-item summary {
         font-size: clamp(1.2rem, 5vw, 1.5rem);
