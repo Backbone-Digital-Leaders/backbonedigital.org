@@ -191,20 +191,6 @@
         padding: 0.4rem 0;
     }
 
-    /* clamp learn-to list to 440px and keep each item on a single line */
-    .learn-to-list {
-        max-width: 440px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .learn-to-text {
-        font-size: min(3.7vw, 1rem);
-        white-space: nowrap;
-        word-spacing: 0;
-        padding: 0 0.25rem;
-    }
-
     /* slightly tighter FAQ question font on narrow phones */
     .faq-item summary {
         font-size: clamp(1.2rem, 5vw, 1.5rem);
@@ -239,11 +225,14 @@
 
 .learn-to-list {
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    width: 100%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    box-sizing: border-box;
 }
 
 .learn-to-list li {
@@ -258,15 +247,15 @@
     max-width: 100%;
     color: var(--global-color-text);
     font-family: "Work Sans", sans-serif;
-    font-size: clamp(1.4rem, 4.5vw, 2.6rem);
+    /* sized so every item fits on one line at all viewports */
+    font-size: min(3.4vw, 1.55rem);
     font-weight: 600;
     line-height: 1.25em;
     letter-spacing: 0.01em;
-    word-spacing: 0.06em;
+    word-spacing: 0;
+    white-space: nowrap;
     position: relative;
     z-index: 1;
-    overflow-wrap: anywhere;
-    hyphens: auto;
     box-sizing: border-box;
 }
 
