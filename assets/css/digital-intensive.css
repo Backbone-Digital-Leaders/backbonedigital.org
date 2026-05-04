@@ -210,12 +210,12 @@
 /* learning outcomes */
 .intensive-learn-label {
     margin: 0 0 var(--stack-md) 0;
-    font-family: Martin, sans-serif;
+    font-family: "Work Sans", sans-serif;
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.04em;
 }
 
 .learn-to-list {
@@ -237,11 +237,11 @@
     display: inline-block;
     padding: 0 0.22rem;
     color: var(--global-color-text);
-    font-family: Martin, sans-serif;
+    font-family: "Work Sans", sans-serif;
     font-size: clamp(2em, 5.7vw, 3rem);
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1.2em;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.015em;
     position: relative;
     z-index: 1;
     white-space: nowrap;
