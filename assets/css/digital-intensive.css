@@ -176,32 +176,19 @@
 
 }
 
-@media only screen and (max-width: 480px) {
-    /* larger, more legible learn-to label + items on mobile */
+@media only screen and (max-width: 800px) {
+    /* learn-to label sits proportionally above the larger list items */
     .intensive-learn-label {
-        font-size: 1.6rem;
-        margin-bottom: 1.1rem;
-    }
-
-    .learn-to-text {
-        font-size: clamp(2rem, 6.5vw, 2.8rem);
-        letter-spacing: 0.01em;
-        word-spacing: 0.08em;
-        line-height: 1.4em;
-        padding: 0 0.4rem;
-        max-width: 100%;
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: anywhere;
-        hyphens: auto;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
     }
 
     .learn-to-list {
-        gap: 1.4rem;
+        gap: 1.1rem;
     }
 
     .learn-to-list li {
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
     }
 
     /* slightly tighter FAQ question font on narrow phones */
@@ -254,16 +241,19 @@
 .learn-to-text {
     display: inline-block;
     padding: 0 0.5rem;
+    max-width: 100%;
     color: var(--global-color-text);
     font-family: "Work Sans", sans-serif;
-    font-size: clamp(2em, 5.7vw, 3rem);
+    font-size: clamp(1.4rem, 4.5vw, 2.6rem);
     font-weight: 600;
-    line-height: 1.35em;
-    letter-spacing: 0.005em;
+    line-height: 1.25em;
+    letter-spacing: 0.01em;
     word-spacing: 0.06em;
     position: relative;
     z-index: 1;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    box-sizing: border-box;
 }
 
 .learn-to-list li::before {
