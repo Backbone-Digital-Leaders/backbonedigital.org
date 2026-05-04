@@ -213,6 +213,13 @@
     overflow-x: clip;
 }
 
+/* let learn-to use more of the viewport so items can be much larger
+   while still fitting on a single line */
+.digital-intensive #learn-to .content {
+    max-width: 1600px;
+    padding-inline: clamp(0.5rem, 1.5vw, 1.25rem);
+}
+
 .intensive-learn-label {
     margin: 0 0 var(--stack-md) 0;
     font-family: "Work Sans", sans-serif;
@@ -228,7 +235,6 @@
     margin: 0 auto;
     padding: 0;
     width: 100%;
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -243,12 +249,12 @@
 
 .learn-to-text {
     display: inline-block;
-    padding: 0 0.5rem;
+    padding: 0;
     max-width: 100%;
     color: var(--global-color-text);
     font-family: "Work Sans", sans-serif;
-    /* sized so every item fits on one line at all viewports */
-    font-size: min(3.4vw, 1.55rem);
+    /* sized as large as possible while keeping every item on one line */
+    font-size: min(4.5vw, 3rem);
     font-weight: 600;
     line-height: 1.25em;
     letter-spacing: 0.01em;
