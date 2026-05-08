@@ -193,8 +193,8 @@
 
     /* roomier line-height and heavier weight for the learn-to items on mobile */
     .learn-to-text {
-        line-height: 2.5em;
-        font-weight: 800;
+        line-height: 1.2em;
+        font-weight: normal;
     }
 
     /* slightly tighter FAQ question font on narrow phones */
@@ -228,9 +228,9 @@
 
 .intensive-learn-label {
     margin: 0 0 var(--stack-md) 0;
-    font-family: "Work Sans", sans-serif;
+    font-family: Martin, sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: normal;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.04em;
@@ -258,12 +258,13 @@
     padding: 0;
     max-width: 100%;
     color: var(--global-color-text);
-    font-family: "Work Sans", sans-serif;
+    font-family: Martin, sans-serif;
     /* sized as large as possible while keeping every item on one line */
-    font-size: min(4.5vw, 3rem);
-    font-weight: 600;
+    font-size: min(8.0vw, 3rem);
+    font-weight: normal;
     line-height: 1.25em;
     letter-spacing: 0.01em;
+    text-transform: uppercase;
     word-spacing: 0;
     white-space: nowrap;
     position: relative;
