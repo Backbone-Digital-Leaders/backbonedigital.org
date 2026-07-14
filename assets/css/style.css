@@ -691,6 +691,12 @@ section, footer {
     text-align: center;
 }
 
+@media only screen and (min-width: 801px) {
+    #intensive-promo {
+        padding-top: 3rem;
+    }
+}
+
 #intensive-promo .flex-container {
     flex-direction: column;
     gap: 1.5rem;
