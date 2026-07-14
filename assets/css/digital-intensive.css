@@ -57,7 +57,10 @@
 
 /* neutralize the global h1 padding so the gap is the only spacing between hero lines */
 .digital-intensive #main #cta h1 {
+    width: 100%;
+    max-width: 100%;
     padding-bottom: 0;
+    overflow-wrap: break-word;
 }
 
 .intensive-subhead {

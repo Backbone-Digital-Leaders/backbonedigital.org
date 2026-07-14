@@ -18,8 +18,8 @@
     --global-typography-accent-font-family: "Roboto";
     --global-typography-accent-font-weight: 500;
 
-    --global-width: 80%;
-    --global-max-width: 1000px;
+    --global-width: 88%;
+    --global-max-width: 1100px;
 
     /* Unfortunately, these vars can't be used inside @media queries. */
     --global-size-small: 640px;
@@ -30,12 +30,24 @@ html {
     background-color: var(--global-color-primary);
     color: var(--global-color-text);
     font-family: Inter, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
+    overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+iframe {
+    max-width: 100%;
 }
 
 a {
@@ -50,31 +62,32 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Rubik One", sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    line-height: 0.9em;
+    line-height: 0.95;
+    overflow-wrap: break-word;
 }
 
 .size-h1 {
-    font-size: 5rem;
+    font-size: clamp(3.25rem, 6.5vw, 5rem);
 }
 
 .size-h2 {
-    font-size: 4rem;
+    font-size: clamp(2.75rem, 5vw, 4rem);
 }
 
 .size-h3 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
 }
 
 .size-h4 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .size-h5 {
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
 }
 
 .size-h6 {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
 }
 
 p {
@@ -89,33 +102,33 @@ p {
     font-size: 0.6rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     html {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .size-h1 {
-        font-size: 4.5rem;
+        font-size: clamp(3rem, 7vw, 3.75rem);
     }
 
     .size-h2 {
-        font-size: 4rem;
-    }
-
-    .size-h3 {
         font-size: 3rem;
     }
 
+    .size-h3 {
+        font-size: 2.25rem;
+    }
+
     .size-h4 {
-        font-size: 2.2rem;
+        font-size: 1.65rem;
     }
 
     .size-h5 {
-        font-size: 1.9rem;
+        font-size: 1.4rem;
     }
 
     .size-h6 {
-        font-size: 1.7rem;
+        font-size: 1.15rem;
     }
 
     p {
@@ -123,7 +136,7 @@ p {
     }
 
     .size-small {
-        font-size: 0.9rem;
+        font-size: 0.875rem;
     }
 
     .size-tiny {
@@ -133,43 +146,43 @@ p {
 
 @media only screen and (max-width: 640px) {
     html {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .size-h1 {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 12vw, 3.25rem);
     }
 
     .size-h2 {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .size-h3 {
-        font-size: 3rem;
-    }
-
-    .size-h4 {
-        font-size: 2.2rem;
-    }
-
-    .size-h5 {
         font-size: 2rem;
     }
 
-    .size-h6 {
-        font-size: 1.8rem;
+    .size-h4 {
+        font-size: 1.5rem;
     }
 
-    p {
+    .size-h5 {
+        font-size: 1.25rem;
+    }
+
+    .size-h6 {
         font-size: 1.1rem;
     }
 
-    .size-small {
+    p {
         font-size: 1rem;
     }
 
+    .size-small {
+        font-size: 0.875rem;
+    }
+
     .size-tiny {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -419,14 +432,14 @@ section, footer {
     column-gap: 2rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     #mission .flex-container {
         flex-direction: column;
     }
 }
 
 /* tighten spacing between section headings and body on mobile */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     #mission .flex-container aside + div,
     #expertise .flex-container aside + div,
     #our-story .flex-container aside + div {
@@ -441,7 +454,7 @@ section, footer {
 }
 
 .flex-container aside h2 {
-    text-wrap: nowrap;
+    text-wrap: balance;
 }
 
 #mission .flex-container figure {
@@ -482,8 +495,25 @@ section, footer {
 }
 
 .content aside {
-    width: 100%;
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 100%;
     align-self: start;
+}
+
+#mission .flex-container aside + div,
+#expertise .flex-container aside + div,
+#our-story .flex-container aside + div {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+    #mission .content aside,
+    #expertise .content aside,
+    #our-story .content aside {
+        width: 100%;
+    }
 }
 
 #values .flex-container {
@@ -539,11 +569,13 @@ section, footer {
 
 @media only screen and (max-width: 640px) {
     #values .values-detail {
-        padding-right: 1rem;
+        flex-direction: column;
+        padding: 1.5rem;
+        text-align: center;
     }
 
     #values .values-detail img {
-        padding: 1rem;
+        padding: 0;
         width: 120px;
     }
 }
@@ -560,17 +592,18 @@ section, footer {
 }
 
 #expertise ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
     list-style-type: none;
-    align-items: center;
-    justify-content: left;
+    align-items: start;
     margin: 0;
+    padding: 0;
 }
 
 #expertise ul li {
-    width: 40%;
-    margin: 2rem 1rem;
+    min-width: 0;
+    margin: 0;
 }
 
 #expertise ul li img {
@@ -590,9 +623,16 @@ section, footer {
     column-gap: 2rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     #expertise .flex-container {
         flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #expertise ul {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 }
 
@@ -605,17 +645,15 @@ section, footer {
 }
 
 #our-partners .flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem 1.5rem;
+    width: 100%;
 }
 
 #our-partners .flex-row > div {
-    padding: 0 1rem;
-    width: 10%;
-    min-width: 100px;
+    min-width: 0;
+    padding: 0;
 }
 
 #our-partners ul {
@@ -719,8 +757,10 @@ footer .footer-links {
 
 footer .footer-links ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
     list-style-type: none;
     padding: 0;
 }
@@ -733,16 +773,15 @@ footer .footer-links ul {
 @media only screen and (max-width: 800px) {
     .mobile-section-nav {
         display: block;
+        width: 100%;
         margin: 0.5rem 0 0.25rem 0;
     }
 
     .mobile-section-nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: center;
-        gap: clamp(0.5rem, 4vw, 1.5rem);
+        gap: clamp(0.25rem, 2vw, 0.75rem);
         list-style: none;
         padding: 0;
         margin: 0;
@@ -753,17 +792,18 @@ footer .footer-links ul {
     }
 
     .mobile-section-nav a {
-        display: inline-block;
-        padding: 0.45rem 0.6rem;
+        display: block;
+        min-height: 44px;
+        padding: 0.6rem 0.15rem;
         font-family: "Rubik One", sans-serif;
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
+        font-size: clamp(0.75rem, 3vw, 1rem);
         line-height: 1.1;
         text-transform: uppercase;
         text-decoration: none;
         color: var(--global-color-text);
         border-radius: 2px;
         background: transparent;
-        white-space: nowrap;
+        white-space: normal;
         letter-spacing: -0.02em;
     }
 
@@ -810,11 +850,16 @@ footer .footer-links ul {
 
 #our-collective {
     flex: 1 1 0;
+    min-width: 0;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     #our-story .flex-container {
         flex-direction: column;
+    }
+
+    #our-story .content aside {
+        width: 100%;
     }
 }
 
@@ -825,6 +870,7 @@ footer .footer-links ul {
     align-items: left;
     margin: 2rem auto;
     padding-bottom: 2rem;
+    overflow-wrap: anywhere;
 }
 
 .policy #logo img {
@@ -855,7 +901,7 @@ footer .footer-links ul {
 
 .form-page header {
     /* Match the Google Form default and center it. */
-    width: 640px;
+    width: min(640px, calc(100% - 2rem));
     margin: 0 auto;
 }
 
