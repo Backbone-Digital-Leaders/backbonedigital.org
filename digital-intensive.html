@@ -168,6 +168,7 @@
                 var iframe = modal.querySelector('.apply-modal__iframe');
                 var triggers = document.querySelectorAll('[data-apply-trigger]');
                 var closers = modal.querySelectorAll('[data-apply-close]');
+                var faqItems = document.querySelectorAll('.faq-item');
                 var lastFocused = null;
 
                 function openModal(event) {
@@ -192,8 +193,30 @@
                     }
                 }
 
+                function closeFaq(item) {
+                    if (!item.open) return;
+                    item.classList.add('is-closing');
+                    window.setTimeout(function () {
+                        item.open = false;
+                        item.classList.remove('is-closing');
+                    }, 300);
+                }
+
                 triggers.forEach(function (el) { el.addEventListener('click', openModal); });
                 closers.forEach(function (el) { el.addEventListener('click', closeModal); });
+                faqItems.forEach(function (item) {
+                    item.querySelector('summary').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        if (item.open) {
+                            closeFaq(item);
+                            return;
+                        }
+                        faqItems.forEach(function (otherItem) {
+                            if (otherItem !== item) closeFaq(otherItem);
+                        });
+                        item.open = true;
+                    });
+                });
                 document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape' && !modal.hidden) closeModal();
                 });
