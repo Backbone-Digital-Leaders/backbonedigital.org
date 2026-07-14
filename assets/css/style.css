@@ -61,7 +61,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Rubik One", sans-serif;
     font-weight: normal;
-    text-transform: uppercase;
     line-height: 0.95;
     overflow-wrap: break-word;
 }
@@ -197,7 +196,6 @@ p {
     padding: 0.25rem 2rem;
     font-family: "Rubik One", sans-serif;
     text-decoration: none;
-    text-transform: uppercase;
 }
 
 /* strip browser-default button chrome so <button class="button"> matches <a class="button"> */
@@ -378,7 +376,6 @@ section, footer {
     align-items: center;
     font-weight: normal;
     font-family: "Rubik One", sans-serif;
-    text-transform: uppercase;
 }
 
 #main header nav li a {
@@ -396,10 +393,6 @@ section, footer {
     gap: 2rem;
     padding: 0;
     list-style-type: none;
-}
-
-#main #cta {
-    text-transform: uppercase;
 }
 
 #main #cta h1 {
@@ -640,6 +633,33 @@ section, footer {
     margin-bottom: 2rem;
 }
 
+@media only screen and (min-width: 801px) {
+    #our-partners .flex-container {
+        align-items: stretch;
+    }
+
+    #our-partners .color-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    #our-partners h2 {
+        text-align: center;
+    }
+
+    #our-partners .flex-row {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    #our-partners .flex-row h3 {
+        margin: 0 0 1rem;
+        font-size: clamp(0.95rem, 1.3vw, 1.25rem);
+        line-height: 1.05;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
 #our-partners .flex-container {
     flex-direction: column;
 }
@@ -654,6 +674,7 @@ section, footer {
 #our-partners .flex-row > div {
     min-width: 0;
     padding: 0;
+    text-align: center;
 }
 
 #our-partners ul {
@@ -666,12 +687,16 @@ section, footer {
 }
 
 #our-partners ul li {
-    align-self: start;
+    align-self: center;
     margin: 0.5rem 0;
     padding: 0;
 }
 
 @media only screen and (max-width: 800px) {
+    #our-partners .flex-row > div:last-child {
+        grid-column: 1 / -1;
+    }
+
     #our-partners ul li {
         margin: 0.25rem 0;
     }
@@ -708,6 +733,10 @@ section, footer {
 }
 
 @media only screen and (max-width: 800px) {
+    #intensive-promo {
+        padding-top: 2rem;
+    }
+
     #intensive-promo .content {
         width: 80%;
     }
@@ -783,11 +812,12 @@ footer .footer-links ul {
         margin: 0.5rem 0 0.25rem 0;
     }
 
-    .mobile-section-nav ul {
+    #main .mobile-section-nav ul {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: center;
         gap: clamp(0.25rem, 2vw, 0.75rem);
+        width: 100%;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -804,7 +834,6 @@ footer .footer-links ul {
         font-family: "Rubik One", sans-serif;
         font-size: clamp(0.75rem, 3vw, 1rem);
         line-height: 1.1;
-        text-transform: uppercase;
         text-decoration: none;
         color: var(--global-color-text);
         border-radius: 2px;
@@ -857,6 +886,12 @@ footer .footer-links ul {
 #our-collective {
     flex: 1 1 0;
     min-width: 0;
+}
+
+@media only screen and (min-width: 1101px) {
+    #our-collective {
+        padding-top: 2rem;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
