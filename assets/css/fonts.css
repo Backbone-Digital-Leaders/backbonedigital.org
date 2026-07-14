@@ -1,7 +1,7 @@
 @font-face {
-    font-family: Martin;
+    font-family: "Rubik One";
     font-display: swap;
-    src: url("/assets/fonts/martin-regular-webfont.woff2");
+    src: url("https://cdn.jsdelivr.net/fontsource/fonts/rubik-one@latest/latin-400-normal.woff2") format("woff2");
 }
 
 @font-face {

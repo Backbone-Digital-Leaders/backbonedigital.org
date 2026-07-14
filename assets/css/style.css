@@ -47,7 +47,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Martin, sans-serif;
+    font-family: "Rubik One", sans-serif;
     font-weight: normal;
     text-transform: uppercase;
     line-height: 0.9em;
@@ -182,7 +182,7 @@ p {
     box-shadow: none;
     color: var(--global-color-primary);
     padding: 0.25rem 2rem;
-    font-family: Martin, sans-serif;
+    font-family: "Rubik One", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -364,7 +364,7 @@ section, footer {
     flex: auto;
     align-items: center;
     font-weight: normal;
-    font-family: Martin, sans-serif;
+    font-family: "Rubik One", sans-serif;
     text-transform: uppercase;
 }
 
@@ -755,7 +755,7 @@ footer .footer-links ul {
     .mobile-section-nav a {
         display: inline-block;
         padding: 0.45rem 0.6rem;
-        font-family: Martin, sans-serif;
+        font-family: "Rubik One", sans-serif;
         font-size: clamp(1.3rem, 5vw, 1.8rem);
         line-height: 1.1;
         text-transform: uppercase;
